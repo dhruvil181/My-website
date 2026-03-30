@@ -752,7 +752,10 @@
         letter-spacing: 0.06em;
         text-transform: uppercase;
         cursor: pointer;
-        transition: background 0.25s, border-color 0.25s, transform 0.25s;
+        transition:
+          background 0.25s,
+          border-color 0.25s,
+          transform 0.25s;
       }
       .cert-view-btn:hover {
         background: rgba(162, 44, 41, 0.18);
@@ -1289,9 +1292,9 @@
     <!-- Certifications -->
     <section id="certifications">
       <p class="section-label reveal">Credentials</p>
-      <h2 class="section-title reveal">Verified <em>expertise</em></h2>
+      <h2 class="section-title reveal">Verified <em>Certificate</em></h2>
       <div class="cert-list">
-        <div class="cert-item reveal" data-cert-url="">
+        <div class="cert-item reveal">
           <div>
             <div class="cert-name">
               Deloitte Australia — Data Analytics Job Simulation
@@ -1301,36 +1304,51 @@
           </div>
           <div class="cert-right">
             <div class="cert-arrow">→</div>
-            <button class="cert-view-btn" type="button">
+            <a
+              class="cert-view-btn"
+              href="https://www.theforage.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_68f4f77ba4fed085fd07e5ea_1765611497156_completion_certificate.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               View Certificate
-            </button>
+            </a>
           </div>
         </div>
-        <div class="cert-item reveal" data-cert-url="">
+        <div class="cert-item reveal">
           <div>
             <div class="cert-name">Claude Code in Action</div>
             <div class="cert-issuer">Anthropic</div>
           </div>
           <div class="cert-right">
             <div class="cert-arrow">→</div>
-            <button class="cert-view-btn" type="button">
+            <a
+              class="cert-view-btn"
+              href="https://verify.skilljar.com/c/hiupmko3kosf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               View Certificate
-            </button>
+            </a>
           </div>
         </div>
-        <div class="cert-item reveal" data-cert-url="">
+        <div class="cert-item reveal">
           <div>
             <div class="cert-name">Python 101 for Data Science</div>
             <div class="cert-issuer">IBM</div>
           </div>
           <div class="cert-right">
             <div class="cert-arrow">→</div>
-            <button class="cert-view-btn" type="button">
+            <a
+              class="cert-view-btn"
+              href="https://courses.cognitiveclass.ai/certificates/3034eebdffcd4e4589b668db414220f2"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               View Certificate
-            </button>
+            </a>
           </div>
         </div>
-        <div class="cert-item reveal" data-cert-url="">
+        <div class="cert-item reveal">
           <div>
             <div class="cert-name">
               JPMorganChase — Software Engineering Job Simulation
@@ -1339,23 +1357,50 @@
           </div>
           <div class="cert-right">
             <div class="cert-arrow">→</div>
-            <button class="cert-view-btn" type="button">
+            <a
+              class="cert-view-btn"
+              href="https://www.theforage.com/completion-certificates/Sj7temL583QAYpHXD/E6McHJDKsQYh79moz_Sj7temL583QAYpHXD_68f4f77ba4fed085fd07e5ea_1765763741797_completion_certificate.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               View Certificate
-            </button>
+            </a>
           </div>
         </div>
-        <div class="cert-item reveal" data-cert-url="">
+        <div class="cert-item reveal">
           <div>
             <div class="cert-name">
-              Machine Learning Operations (MLOps) for Generative AI
+              Generative AI Essentials: Using LLMs to Work with Data
             </div>
-            <div class="cert-issuer">Google / DeepLearning.AI</div>
+            <div class="cert-issuer">IBM</div>
           </div>
           <div class="cert-right">
             <div class="cert-arrow">→</div>
-            <button class="cert-view-btn" type="button">
+            <a
+              class="cert-view-btn"
+              href="https://www.credly.com/badges/af3315c3-1b15-41ac-8670-ec9c17e5374d/linked_in_profile"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               View Certificate
-            </button>
+            </a>
+          </div>
+        </div>
+        <div class="cert-item reveal">
+          <div>
+            <div class="cert-name">Building with the Claude API</div>
+            <div class="cert-issuer">Anthropic</div>
+          </div>
+          <div class="cert-right">
+            <div class="cert-arrow">→</div>
+            <a
+              class="cert-view-btn"
+              href="https://verify.skilljar.com/c/8vs6r9t26awh"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Certificate
+            </a>
           </div>
         </div>
       </div>
@@ -1528,26 +1573,6 @@
       const nav = document.getElementById("navbar");
       window.addEventListener("scroll", () => {
         nav.style.padding = window.scrollY > 60 ? "14px 64px" : "28px 64px";
-      });
-
-      // Certificates: open certificate link in a new tab
-      document.querySelectorAll("#certifications .cert-view-btn").forEach((btn) => {
-        btn.addEventListener("click", (e) => {
-          e.preventDefault();
-          e.stopPropagation();
-
-          const certItem = btn.closest(".cert-item");
-          const url = certItem?.dataset?.certUrl;
-
-          if (!url) {
-            alert(
-              "Certificate link not added yet. Please set `data-cert-url` for this certificate in `1.html`."
-            );
-            return;
-          }
-
-          window.open(url, "_blank", "noopener,noreferrer");
-        });
       });
     </script>
   </body>
